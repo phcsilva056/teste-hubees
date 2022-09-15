@@ -6,6 +6,7 @@ O formulário serve para criar uma solicitação de orçamento de um evento, no 
 
 ## O que funciona
 - Campos devem todos ser preenchidos, exceto o campo de Observações;
+- Erro 405 pode ser informado para simular um erro de entrega dos dados;
 - Os dados são coletados e informados no console log para simbolizar que está sendo enviado para o backend;
     - Caso o checkbox não esteja sendo marcado, os campos abaixo deles não teram seus dados sendo enviados.
 
