@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <link rel="stylesheet" href="./CSS/index.css">
+    <link rel="stylesheet" href="./CSS/form.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./JS/app.js" defer></script>
+    <script src="https://www.google.com/recaptcha/api.js" defer></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LecN_ghAAAAAKi1mep4mLtYy9ilsMvh5gZohf5W"
+        defer></script>
+    <title>Netpark - Solicite um orçamento</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div id="div-error">
+            <p id="message">dsadsadsa/p>
+        </div>
+
+        <form id="form-fields" class="container-form">
+
+            <div class="div-header">
+                <img class="img-logo" src="./assets/logo-netpark.jpg" alt="Logo da Netpark">
+                <h2>Solicite um orçamento</h2>
+            </div>
+
+            <section id="form">
+
+                <h2>Dados da Empresa</h2>
+
+                <label for="name">Nome *</label>
+                <input id="name" name="business-businessName" type="text" placeholder="Nome da empresa" required>
+
+                <label for="cnpj">CNPJ *</label>
+                <input id="cnpj" name="business-businessCnpj" type="text" placeholder="CNPJ" required>
+
+                <label for="email">E-Mail *</label>
+                <input id="email" name="business-businessEmail" type="email" placeholder="E-Mail" required>
+
+                <label for="phone">Telefone *</label>
+                <input id="phone" name="business-businessPhone" type="text" placeholder="(__)_____-____" required>
+
+                <div class="div-address">
+
+                    <span class="span-form">
+                        <label for="address">Endereço *</label>
+                        <input id="address" name="business-address" type="text" placeholder="Endereço" required>
+                    </span>
+
+                    <span class="span-form">
+                        <label for="address-number">Nº *</label>
+                        <input id="address-number" name="business-addressNumber" type="number" placeholder="Número"
+                            min="1" required>
+                    </span>
+
+                </div>
+
+                <label for="city">Cidade *</label>
+                <input id="city" name="business-city" type="text" placeholder="Cidade" required>
+
+                <label for="country">País *</label>
+                <input id="country" name="business-county" type="text" placeholder="País" required>
+
+                <label for="state">Estado *</label>
+                <input id="state" name="business-state" type="text" placeholder="Estado" required>
+
+                <label for="zip-code">CEP *</label>
+                <input id="zip-code" name="business-zipCode" type="text" placeholder="CEP" required>
+
+            </section>
+
+            <section id="form" class="form-border-top">
+
+                <h2>Dados dos responsáveis financeiros</h2>
+
+                <label for="name-financial">Nome *</label>
+                <input id="name-financial" name="financial-financialName" type="text" placeholder="Nome do Responsável"
+                    required>
+
+                <label for="email-financial">E-Mail *</label>
+                <input id="email-financial" name="financial-financialEmail" type="email"
+                    placeholder="E-Mail do Responsável" required>
+
+                <label for="phone-financial">Telefone *</label>
+                <input id="phone-financial" name="financial-financialPhone" type="text"
+                    placeholder="Telefone do Responsável" required>
+
+            </section>
+
+            <section id="form" class="form-border-top">
+
+                <h2>Dados da garagem a ser alugada e do evento</h2>
+
+                <label for="garage-code">Código da garagem *</label>
+                <input id="garage-code" name="garage-garageCode" type="text" placeholder="Código da Garagem"
+                    oninvalid="this.setCustomValidity('Código deve ter 3 dígitos!')" pattern=^[a-z0-9]{3}$
+                    oninput="this.setCustomValidity('')" required>
+
+                <label for="quantity-guest">Quantidade de convidados *</label>
+                <input id="quantity-guest" name="garage-qtyGuest" type="number" placeholder="Quantidade de Convidados"
+                    min="0" required>
+
+                <div class="div-time">
+                    <span class="span-form">
+                        <label for="initial-time">Horário inicial *</label>
+                        <input id="initial-time" name="garage-timeDayInitial" type="time" required>
+                    </span>
+
+                    <span class="span-form">
+                        <label for="final-time">Horário final *</label>
+                        <input id="final-time" name="garage-timeDayFinal" type="time" required>
+                    </span>
+
+                    <span class="span-form">
+                        <label for="date-event">Data do evento *</label>
+                        <input id="date-event" name="garage-eventDay" type="date" required>
+                    </span>
+
+                </div>
+
+            </section>
+
+            <section id="form" class="form-border-top">
+
+                <span class="span-check-pay">
+                    <label for="check-pay">Marque essa opção caso o pagamento seja feito por outra empresa!</label>
+                    <input id="check-pay" type="checkbox">
+                </span>
+
+                <div id="div-form-pay">
+
+                    <label for="payer-company-name">Nome da empresa *</label>
+                    <input id="payer-company-name" name="payer-payEmail" type="text"
+                        placeholder="Nome da Empresa Pagadora" required disabled>
+
+                    <label for="payer-cnpj">CNPJ *</label>
+                    <input id="payer-cnpj" name="payer-payCompanyCnpj" type="text"
+                        placeholder="CNPJ da Empresa Pagadora" required disabled>
+
+                    <label for="payer-email">E-Mail da empresa*</label>
+                    <input id="payer-email" name="payer-payEmail" type="email" placeholder="E-Mail da Empresa Pagadora"
+                        required disabled>
+
+                    <label for="payer-responsible-name">Nome da pessoa responsável *</label>
+                    <input id="payer-responsible-name" name="payer-payResponsibleName" type="text"
+                        placeholder="Nome da Pessoa Responsável" required disabled>
+
+                    <label for="payer-responsible-email">E-Mail da pessoa responsável *</label>
+                    <input id="payer-responsible-email" name="payer-payResponsibleEmail" type="email"
+                        placeholder="E-Mail da Pessoa Responsável" required disabled>
+
+                    <label for="payer-general-observations">Observações (Opcional)</label>
+                    <input id="payer-general-observations" name="payer-generalObservations" type="text"
+                        placeholder="Observações" disabled>
+
+                </div>
+
+            </section>
+
+            <input type="text" class="g-recaptcha" data-sitekey="6LecN_ghAAAAAKi1mep4mLtYy9ilsMvh5gZohf5W" disabled
+                hidden>
+                
+            <section id="div-button">
+                <button id="btn-submit" type="submit">Enviar</button>
+            </section>
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>
